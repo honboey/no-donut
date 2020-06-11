@@ -1,5 +1,5 @@
 # No Donut
-[http://www.nodonut.org](nodonut.org) is a collection of resources that challenges state policing in Australia. These resources include readings, videos, podcasts, organisations and campaigns. If you have a resource that you would like listed here, please log it as an Issue or Pull Request. ACAB!
+[nodonut.org](http://www.nodonut.org) is a collection of resources that challenges state policing in Australia. These resources include readings, videos, podcasts, organisations and campaigns. If you have a resource that you would like listed here, please log it as an Issue or Pull Request. ACAB!
 
 ## General workflow
 All source files are placed in [/src](/src). When you run `gulp develop` these files are processed and placed into [/dev](/dev). The files in [/dev](/dev) can be read by your browser.
