@@ -1,10 +1,15 @@
 # Tailwind Starter Kit
+<<<<<<< HEAD
 This is a repository that holds some common plugins, workflows and a file structure that is useful for starting a Tailwind project. It uses Gulp as the toolkit to automate the workflow.
+=======
+This is a repository that holds some common plugins, workflows and file structure that is useful for starting a Tailwind project. It uses Gulp as the toolkit to automate the workflow.
+>>>>>>> optionals
 
 ## General workflow
 All source files are placed in [/src](/src). When you run `gulp develop` these files are processed and placed into [/dev](/dev). The files in [/dev](/dev) can be read by your browser.
 
 Out of the box, `gulp develop` does several things:
+<<<<<<< HEAD
 * Converts the original tailwind.css file to a browser-legible .css file.
 * Adds any necessary browser prefixes to the .css file so it is compatible on all browsers
 * Converts and collates the .njk files to browser-legible .html files
@@ -19,11 +24,31 @@ When development has finished a `gulp production` command runs a a series of scr
 * Copies any javascript files
 * Copies any fonts
 * Copies any images
+=======
+* Watches any changes in [/src](/src) and processes these changes to [/dev](/dev)
+* Converts the original tailwind.css file to a browser-legible .css file.
+* Adds any necessary browser prefixes to the .css file so it is compatible on all browsers
+* Converts and collates the .njk files to browser-legible .html files
+* Creates folders based on these html file names and then renames them to index.html
+* Copies any javascript files
+* Copies any fonts
+* Processes all images to various sizes to enable lazy loading and responsive images
+
+When development has finished a `gulp production` command runs a series of scripts that processes all the [/dev](/dev) files and places them into [/public](/public). [/public](/public) is the final, production ready site. 
+
+`gulp production` does several things to get the files production ready:
+* Runs PurgeCSS to get rid on any unwanted CSS 
+* Minimises CSS to make it as lean as possible
+* Minimises and uglifies javascript files
+* Copies all fonts
+* Copies all images
+>>>>>>> optionals
 
 ## Directory tree and file structure
 The directory tree looks like this
 ```
 src (this holds all source files)
+<<<<<<< HEAD
     – img
     – scripts
     – styles
@@ -39,6 +64,23 @@ public (this is production ready code)
     – img
     – scripts
     – styles 
+=======
+|   |– img
+|   |– scripts
+|   |– styles
+|   |– templates (this holds .njk files which correspond to its .html page)
+|      |– partials (this holds the .html templating blocks)
+|   
+dev (this holds all development files)
+|   |– img
+|   |– scripts
+|    |– styles
+|    
+public (this is production ready code)
+|    |– img
+|    |– scripts
+|    |– styles 
+>>>>>>> optionals
 ```
 
 ## Geting started
@@ -49,11 +91,21 @@ These instructions are for getting the project running on a local development en
 * [Gulp](https://gulpjs.com/)
 
 ### Install plugins 
+<<<<<<< HEAD
 Install all the necessary plug-ins by running `npm install gulp-postcss tailwindcss autoprefixer gulp-nunjucks-render gulp-purgecss gulp-clean-css gulp-terser --save-dev`
+=======
+Install all the necessary plug-ins by running `npm install` in the root of the project folder.
+>>>>>>> optionals
 
 ### Run your first build
 `gulp develop`
 
+<<<<<<< HEAD
+=======
+### Where to work
+You should always be working from [/src](/src).
+
+>>>>>>> optionals
 ## Common commands
 
 ### Development
@@ -61,7 +113,11 @@ Install all the necessary plug-ins by running `npm install gulp-postcss tailwind
 
    * `gulp css` processes .css files in [/dev](/dev).
    * `gulp html` processes .njk files in [/src](/src) and converts them to .html and places them in [/dev](/dev).
+<<<<<<< HEAD
    * `gulp scripts` processes .js files in [/src](/src) and and places them in [/dev](/dev).
+=======
+   * `gulp scripts` processes .js files in [/src](/src) and places them in [/dev](/dev).
+>>>>>>> optionals
    * `gulp watchTask` watches any changes in [/src](/src) and runs the necessary script.
 
 ### Production
@@ -74,7 +130,12 @@ Install all the necessary plug-ins by running `npm install gulp-postcss tailwind
 There is another branch of this project called 'optionals'. This branch contains the following optional plugins:
 * [SwupJS](https://swup.js.org/) for animated page transitions
 * [gulp-responsive](https://www.npmjs.com/package/gulp-responsive) for making multiple resolutions of images
+<<<<<<< HEAD
 * [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) for minimising image size
 * [LazySizes](https://github.com/aFarkas/lazysizes) for lazy loading images
+=======
+* [LazySizes](https://github.com/aFarkas/lazysizes) for lazy loading images
+* [gulp-rename](https://www.npmjs.com/package/gulp-rename) for renaming files and directory paths. This is used for renaming html files to index.html and placing them in a folder named after the original filename.
+>>>>>>> optionals
 
 
