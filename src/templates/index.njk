@@ -12,14 +12,72 @@
         <title>No Donut</title>
     </head>
     <body class="bg-nd-yellow">
-        <div class="px-12 py-12 lg:px-48 lg:py-24 mx-auto">
-            <h1 class="mb-12"><img src="/img/logo.gif" alt="No Donut logo"></h1>
-            <img src="/img/donut-cop.jpg" srcset="/img/donut-cop-800w.jpg 800w, /img/donut-cop-1080w.jpg 1080w, /img/donut-cop.jpg 1300w," alt="A New York cop staring at a donut dangling in front of him">
-        </div>
+        <header>
+            <h1>
+                <img src="/img/no.gif" alt="no">
+                <img src="/img/donut.gif" alt="donut">
+            </h1>
+            <p>No Donut is a collection of resources building towards a copless future</p>
+            <p>
+                <a href="#">Submit a link</a>
+            </p>
+        </header>
+
+        <section>
+            <ul>
+                <li>
+                    <h2>
+                        <a href="https://www.abc.net.au/radio/programs/the-signal/does-australia-have-a-policing-problem-too/12318430">Does Australia have a policing problem too?</a>
+                    </h2>
+                    <p>An outline of policing in Australia, detailing its history in aiding White occupiers during invasion and how it has maintained its racists roots. In particular they reference a clip of a white Australian police officer slamming an indigenous teenager face-first into the ground</p>
+                    <p>
+                        <i>ABC</i><br>
+                        16 min 16 sec</p>
+                </li>
+                <li>
+                    <h2>
+                        <a href="https://www.theguardian.com/commentisfree/2020/may/31/the-answer-to-police-violence-is-not-reform-its-defunding-heres-why">The answer to policing violence is not "reform". It's defunding. Here's why</a>
+                    </h2>
+                    <p>By Alex S Vitale</p>
+                    <p>&ldquo;&lsquo;procedural justice&rsquo;&#133;assumes that the police are neutrally enforcing a set of laws that are automatically beneficial to everyone. Instead of questioning the validity of using police to wage an inherently racist war on drugs, advocates of &lsquo;procedural justice&rsquo; politely suggest that police get anti-bias training, which they will happily deliver for no small fee.&rdquo;
+                    </p>
+                    <p>
+                        <i>The Guardian</i><br>
+                        770 words<br>
+                        (4 minutes)</p>
+                </li>
+                <li>
+                    <h2>
+                        <a href="https://www.workerssolidarity.org.au/analysis_arepoliceworkers">Are the police workers like the rest of us?</a>
+                    </h2>
+                    <p>“In a newly colonised country like Australia, the police served the additional purpose of protecting and supporting the expansion of the colony into the new lands of inland Australia. Again, it is clear that this role made the police the protectors, if not the enforcers, of the dispossession and the genocide against the Indigenous people.”
+                    </p>
+                    <p>
+                        <i>Workers Solidarity</i><br>
+                        660 words<br>
+                        (3 minutes)</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <form action="" method="">
+                <ul>
+                    <li>
+                        <label for="link">Link</label>
+                        <input type="text" id="link">
+                    </li>
+                    <li>
+                        <label for="summary">Summary</label>
+                        <textarea name="user_summary" id="summary"></textarea>
+                    </li>
+                    <li>
+                        <button type="submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+        </section>
 
 
-        <!-- Insert "scripts-links.njk" partial -->
-        {% include "scripts-links.njk" %}
-        <!-- Insert "scripts-links.njk" partial -->
     </body>
 </html>
