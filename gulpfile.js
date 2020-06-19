@@ -119,11 +119,12 @@ function imageCopy() {
 
 // Watchtasks
 function watchTask() {
-    watch(["src/styles/*.css"], parallel(css));
+    watch(["src/styles/*.css", "tailwind.config.js"], parallel(css));
     watch(["src/templates/**/*.njk"], parallel(html));
     watch(["src/scripts/*.js"], parallel(scripts));
-    watch(["src/img/**/*.{jpg,png,gif}"], parallel(images, imageCopy))
-    watch(["src/favicon"], parallel(favicon))
+    watch(["src/img/**/*.{jpg,png,gif}"], parallel(images, imageCopy));
+    watch(["src/favicon"], parallel(favicon));
+    watch(["src/styles/*.woff"], parallel(typeface))
 }
 
 /******************************************************
@@ -196,5 +197,5 @@ exports.cssProduction = cssProduction;
  * COMPOUND TASKS
 ******************************************************/
 
-exports.develop = parallel(watchTask, typeface);
+exports.develop = parallel(css, html, scripts, favicon, typeface, images, imageCopy, watchTask);
 exports.production = parallel(cssProduction, htmlProduction, scriptsProduction, imgProduction, typefaceProduction, faviconProduction)
