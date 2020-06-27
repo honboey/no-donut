@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => (
         <img src={no} alt="no" className="lg:w-1/3" />
         <img src={donut} alt="donut" className="lg:w-2/3" />
     </h1>
-    <div className="flex justify-between flex-col lg:flex-row lg:flex-row-reverse mb-12">
+    <div className="flex justify-between flex-col lg:flex-row lg:flex-row-reverse mb-12 lg:mb-20">
       <div className="lg:w-2/3">
         <p className="text-xl sm:text-2xl lg:text-4xl leading-tight mb-6 mb-4 lg:mb-8">
           No Donut is a collection of resources building towards a copless
