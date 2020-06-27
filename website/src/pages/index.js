@@ -16,7 +16,7 @@ const IndexPage = function ({ data }) {
             >
               <div className="lg:w-1/3">
                 <aside className="lg:w-3/4">
-                  <p className="text-sm lg:text-xl leading-snug lg:text-right font-plex-mono">
+                  <p className="text-sm lg:text-lg leading-snug lg:text-right font-plex-mono">
                     <i>{node.data.publisher}</i>
                     <br />
                     {node.data.meta}
@@ -25,12 +25,19 @@ const IndexPage = function ({ data }) {
               </div>
 
               <div className="lg:w-2/3">
+<<<<<<< HEAD
                 <h2 className="text-xl lg:text-5xl leading-tight underline mb-2 lg:mb-4">
                   <a href={node.data.url} rel="noreferrer" target="_blank">
                     {node.data.title}
                   </a>
                 </h2>
                 <p className="lg:text-3xl leading-snug">{node.data.summary}</p>
+=======
+                <h2 className="text-xl sm:text-2xl lg:text-4xl leading-tight underline mb-2 lg:mb-4">
+                  <a href={node.url} rel="noreferrer" target="_blank">{node.title}</a>
+                </h2>
+                <p className="sm:text-lg lg:text-2xl leading-snug">{node.summary}</p>
+>>>>>>> master
               </div>
             </li>
           ))}
