@@ -9,7 +9,7 @@ const IndexPage = function ({ data }) {
       <SEO title="Home" />
       <section>
         <ul>
-          {data.allNodonutLinksCsv.edges.map(({ node }, index) => (
+          {data.allAirtable.edges.map(({ node }, index) => (
             <li
               key={index}
               className="flex flex-col lg:flex-row mb-12 lg:mb-20"
@@ -17,18 +17,20 @@ const IndexPage = function ({ data }) {
               <div className="lg:w-1/3">
                 <aside className="lg:w-3/4">
                   <p className="text-sm lg:text-xl leading-snug lg:text-right font-plex-mono">
-                    <i>{node.publisher}</i>
+                    <i>{node.data.publisher}</i>
                     <br />
-                    {node.meta}
+                    {node.data.meta}
                   </p>
                 </aside>
               </div>
 
               <div className="lg:w-2/3">
                 <h2 className="text-xl lg:text-5xl leading-tight underline mb-2 lg:mb-4">
-                  <a href={node.url} rel="noreferrer" target="_blank">{node.title}</a>
+                  <a href={node.data.url} rel="noreferrer" target="_blank">
+                    {node.data.title}
+                  </a>
                 </h2>
-                <p className="lg:text-3xl leading-snug">{node.summary}</p>
+                <p className="lg:text-3xl leading-snug">{node.data.summary}</p>
               </div>
             </li>
           ))}
@@ -40,16 +42,18 @@ const IndexPage = function ({ data }) {
 
 export const query = graphql`
   query HomepageQuery {
-    allNodonutLinksCsv {
+    allAirtable(filter: {data: {approved: {eq: true}}}, sort: {fields: data___modified, order: DESC}) {
       edges {
         node {
-          id
-          publisher
-          title
-          url
-          type
-          summary
-          meta
+          data {
+            meta
+            modified
+            publisher
+            summary
+            title
+            url
+            type
+          }
         }
       }
     }
