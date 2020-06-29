@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <header>
     <h1 className="flex mb-6 lg:mb-8 justify-between">
       <div className="lg:w-1/3">
-        <img src={no} alt="no" className="w -full h-auto" />
+        <img src={no} alt="no" className="w-full h-auto" />
       </div>
       <div className="lg:w-2/3">
         <img src={donut} alt="donut" className="w-full h-auto" />
