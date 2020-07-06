@@ -1,3 +1,8 @@
 .example {
   @apply bg-red-100;
 }
+
+body {
+  max-width: 1440px;
+  @apply mx-auto;
+}
