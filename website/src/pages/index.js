@@ -10,27 +10,29 @@ const IndexPage = function ({ data }) {
       <section>
         <ul>
           {data.allAirtable.edges.map(({ node }, index) => (
-            <li
-              key={index}
-              className="flex flex-col lg:flex-row mb-12 lg:mb-20"
-            >
-              <div className="lg:w-1/3">
-                <aside className="lg:w-3/4">
-                  <p className="text-sm lg:text-lg leading-snug lg:text-right font-plex-mono">
+            <li key={index} className="mb-12 lg:mb-20">
+              <div className="w-full lg:flex lg:justify-end">
+                <h2 className="text-xl sm:text-2xl lg:text-4xl leading-tight underline mb-2 lg:mb-4 lg:w-2/3">
+                  <a href={node.data.url} rel="noreferrer" target="_blank">
+                    {node.data.title}{" "}
+                  </a>
+                </h2>
+              </div>
+
+              <div className="lg:flex">
+                <div className="lg:w-1/3">
+                  <footer className="text-sm lg:text-lg leading-snug font-plex-mono lg:w-3/4 lg:text-right">
                     <i>{node.data.publisher}</i>
                     <br />
                     {node.data.meta}
-                  </p>
-                </aside>
-              </div>
+                  </footer>
+                </div>
 
-              <div className="lg:w-2/3">
-                <h2 className="text-xl sm:text-2xl lg:text-4xl leading-tight underline mb-2 lg:mb-4">
-                  <a href={node.data.url} rel="noreferrer" target="_blank">
-                    {node.data.title}
-                  </a>
-                </h2>
-                <p className="sm:text-lg lg:text-2xl leading-snug">{node.data.summary}</p>
+                <div className="w-2/3">
+                  <p className="sm:text-lg lg:text-2xl leading-snug">
+                    {node.data.summary}
+                  </p>
+                </div>
               </div>
             </li>
           ))}
@@ -42,7 +44,10 @@ const IndexPage = function ({ data }) {
 
 export const query = graphql`
   query HomepageQuery {
-    allAirtable(filter: {data: {approved: {eq: true}}}, sort: {fields: data___modified, order: DESC}) {
+    allAirtable(
+      filter: { data: { approved: { eq: true } } }
+      sort: { fields: data___modified, order: DESC }
+    ) {
       edges {
         node {
           data {
