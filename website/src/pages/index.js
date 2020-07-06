@@ -28,7 +28,7 @@ const IndexPage = function ({ data }) {
                   </footer>
                 </div>
 
-                <div className="w-2/3">
+                <div className="lg:w-2/3">
                   <p className="sm:text-lg lg:text-2xl leading-snug">
                     {node.data.summary}
                   </p>
